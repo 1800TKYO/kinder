@@ -1,0 +1,26 @@
+{% extends "app3/base.html" %}
+{% load static %}
+
+    {% block body_block%}
+
+    <h1>Hello and welcome to the List of Ingrediants!</h1>
+
+    {% if raw_ing %}
+    <table>
+      <thead>
+        <th>Ingrediant Name</th>
+        <th>Ingrediant Image</th>
+      </thead>
+
+      {% for rawfood in raw_ing %}
+      <tr>
+        <td>{{ rawfood.ing_name }}</td>
+        <td>{{ rawfood.ing_photo }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p> NO ING Found</p>
+    {% endif %}
+
+    {% endblock %}

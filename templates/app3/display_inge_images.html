@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Detail Img</title>
+  </head>
+  <body>
+    {% if actual_images %}
+    <table>
+      <thead>
+
+        <th>Ingrediant Name</th>
+        <th>Ingrediant Img</th>
+      </thead>
+
+    {% for pic in actual_images %}
+
+    <tr>
+      <td>  {{ pic.ing_name }} </td>
+      <td>  <img src="{{ pic.ing_photo.url }} "></td>
+    </tr>
+
+    {% endfor %}
+
+    {% else %}
+    <p> NO ING Found</p>
+    {% endif %}
+
+    </table>
+
+
+
+  </body>
+
+
+</html>
